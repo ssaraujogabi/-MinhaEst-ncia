@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdTCCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="CatCodigo" />
+    </Key>
+    <Property Name="CatCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CatNome" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Patrimonio">
+    <Key>
+      <PropertyRef Name="PatCodigo" />
+    </Key>
+    <Property Name="PatCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatNome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatHistoria" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="PatEndereco" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="PatFoto1" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="PatFoto2" Type="varchar" MaxLength="60" />
+    <Property Name="PatFoto3" Type="varchar" MaxLength="60" />
+    <Property Name="PatFoto4" Type="varchar" MaxLength="60" />
+    <Property Name="PatFoto5" Type="varchar" MaxLength="60" />
+    <Property Name="PatAcessos" Type="int" Nullable="false" />
+    <Property Name="PatHorario" Type="varchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuCodigo" />
+    </Key>
+    <Property Name="UsuCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuLogin" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UsuSenha" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="bdTCCModelStoreContainer">
+    <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patrimonio" EntityType="Self.Patrimonio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

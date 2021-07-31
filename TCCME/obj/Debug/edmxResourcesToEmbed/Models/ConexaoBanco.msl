@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bdTCCModelStoreContainer" CdmEntityContainer="bdTCCEntities">
+    <EntitySetMapping Name="Patrimonio">
+      <EntityTypeMapping TypeName="bdTCCModel.Patrimonio">
+        <MappingFragment StoreEntitySet="Patrimonio">
+          <ScalarProperty Name="PatCodigo" ColumnName="PatCodigo" />
+          <ScalarProperty Name="PatNome" ColumnName="PatNome" />
+          <ScalarProperty Name="PatHistoria" ColumnName="PatHistoria" />
+          <ScalarProperty Name="PatEndereco" ColumnName="PatEndereco" />
+          <ScalarProperty Name="PatFoto1" ColumnName="PatFoto1" />
+          <ScalarProperty Name="PatFoto2" ColumnName="PatFoto2" />
+          <ScalarProperty Name="PatFoto3" ColumnName="PatFoto3" />
+          <ScalarProperty Name="PatFoto4" ColumnName="PatFoto4" />
+          <ScalarProperty Name="PatFoto5" ColumnName="PatFoto5" />
+          <ScalarProperty Name="PatAcessos" ColumnName="PatAcessos" />
+          <ScalarProperty Name="PatHorario" ColumnName="PatHorario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="bdTCCModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="UsuSenha" ColumnName="UsuSenha" />
+          <ScalarProperty Name="UsuLogin" ColumnName="UsuLogin" />
+          <ScalarProperty Name="UsuCodigo" ColumnName="UsuCodigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categoria">
+      <EntityTypeMapping TypeName="bdTCCModel.Categoria">
+        <MappingFragment StoreEntitySet="Categoria">
+          <ScalarProperty Name="CatNome" ColumnName="CatNome" />
+          <ScalarProperty Name="CatCodigo" ColumnName="CatCodigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

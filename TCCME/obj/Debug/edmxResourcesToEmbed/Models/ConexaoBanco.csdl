@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bdTCCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Patrimonio">
+    <Key>
+      <PropertyRef Name="PatCodigo" />
+    </Key>
+    <Property Name="PatCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatNome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatHistoria" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatEndereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatFoto1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PatFoto2" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PatFoto3" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PatFoto4" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PatFoto5" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="PatAcessos" Type="Int32" Nullable="false" />
+    <Property Name="PatHorario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="bdTCCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Patrimonio" EntityType="Self.Patrimonio" />
+    <EntitySet Name="Usuario" EntityType="bdTCCModel.Usuario" />
+    <EntitySet Name="Categoria" EntityType="bdTCCModel.Categoria" />
+  </EntityContainer>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="UsuCodigo" />
+    </Key>
+    <Property Name="UsuCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuLogin" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UsuSenha" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="CatCodigo" />
+    </Key>
+    <Property Name="CatCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CatNome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

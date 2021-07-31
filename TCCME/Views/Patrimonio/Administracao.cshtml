@@ -1,0 +1,68 @@
+﻿@model IEnumerable<TCCME.Models.Patrimonio>
+@{
+    ViewBag.Title = "Administracao";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="~/Content/css/agency.css" rel="stylesheet">
+    <link href="~/Content/css/MinhaEstancia2.css" rel="stylesheet" />
+   
+    <title>Administração</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <a class="btn btn-primary" href="@Url.Action("Create","Patrimonio")">Novo <i class="fa fa-plus-square"></i></a>
+            </div>
+        </div>
+    </div> <br /> <br />
+    <div class="container" style="background-color: white">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-responsive">
+                    <tr>
+                        <th class="text-center">Código</th>
+                        <th class="text-center">Nome</th>
+                        <th class="text-center">Endereço</th>
+                        <th class="text-center">Opões</th>
+                    </tr>
+                    @foreach (var item in @Model)
+                    {
+                        <tr>
+                            <td>@item.PatCodigo.ToString()</td>
+                            <td>@item.PatNome</td>
+                            <td>@item.PatEndereco</td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Action("Edit", "Patrimonio", new {id = @item.PatCodigo})" data-toggle="tooltip" title="Editar">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a class="btn btn-primary" href="@Url.Action("Excluir", "Patrimonio", new {id = @item.PatCodigo})" data-toggle="tooltip" title="Excluir">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

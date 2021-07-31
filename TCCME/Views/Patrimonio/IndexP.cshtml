@@ -1,0 +1,19 @@
+﻿@model IEnumerable<TCCME.Models.Patrimonio>
+@{
+    ViewBag.Title = "Patrimônios";
+}
+
+
+
+    <h2></h2>
+
+    @foreach (var item in Model)
+    {<div class="col-md-8 pats">
+        <div class="fotoL bstn-fd-item-cover">
+            <img src="~/Content/Uploads/Imagens/@item.PatFoto1" />
+        </div>
+        <h2 class="titulos">@item.PatNome</h2>
+        <p class="ps">@item.PatHistoria.Substring(0, 190) ...</p>
+
+        <a class="btn btn-primary perfil" href="@Url.Action("Perfil", "Patrimonio", new { id = @item.PatCodigo })">PERFIL <i class="fa fa-university"></i></a>
+    </div>}

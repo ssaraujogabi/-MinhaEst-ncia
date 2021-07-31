@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="bdTCCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="CatCodigo" />
+          </Key>
+          <Property Name="CatCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CatNome" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patrimonio">
+          <Key>
+            <PropertyRef Name="PatCodigo" />
+          </Key>
+          <Property Name="PatCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatNome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PatHistoria" Type="varchar" MaxLength="5000" Nullable="false" />
+          <Property Name="PatEndereco" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PatFoto1" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="PatFoto2" Type="varchar" MaxLength="60" />
+          <Property Name="PatFoto3" Type="varchar" MaxLength="60" />
+          <Property Name="PatFoto4" Type="varchar" MaxLength="60" />
+          <Property Name="PatFoto5" Type="varchar" MaxLength="60" />
+          <Property Name="PatAcessos" Type="int" Nullable="false" />
+          <Property Name="PatHorario" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuCodigo" />
+          </Key>
+          <Property Name="UsuCodigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UsuLogin" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UsuSenha" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="bdTCCModelStoreContainer">
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patrimonio" EntityType="Self.Patrimonio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdTCCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Patrimonio">
+          <Key>
+            <PropertyRef Name="PatCodigo" />
+          </Key>
+          <Property Name="PatCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatNome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PatHistoria" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PatEndereco" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PatFoto1" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PatFoto2" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PatFoto3" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PatFoto4" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PatFoto5" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PatAcessos" Type="Int32" Nullable="false" />
+          <Property Name="PatHorario" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="bdTCCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Patrimonio" EntityType="Self.Patrimonio" />
+          <EntitySet Name="Usuario" EntityType="bdTCCModel.Usuario" />
+          <EntitySet Name="Categoria" EntityType="bdTCCModel.Categoria" />
+        </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuCodigo" />
+          </Key>
+          <Property Name="UsuCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsuLogin" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UsuSenha" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="CatCodigo" />
+          </Key>
+          <Property Name="CatCodigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CatNome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdTCCModelStoreContainer" CdmEntityContainer="bdTCCEntities">
+          <EntitySetMapping Name="Patrimonio">
+            <EntityTypeMapping TypeName="bdTCCModel.Patrimonio">
+              <MappingFragment StoreEntitySet="Patrimonio">
+                <ScalarProperty Name="PatCodigo" ColumnName="PatCodigo" />
+                <ScalarProperty Name="PatNome" ColumnName="PatNome" />
+                <ScalarProperty Name="PatHistoria" ColumnName="PatHistoria" />
+                <ScalarProperty Name="PatEndereco" ColumnName="PatEndereco" />
+                <ScalarProperty Name="PatFoto1" ColumnName="PatFoto1" />
+                <ScalarProperty Name="PatFoto2" ColumnName="PatFoto2" />
+                <ScalarProperty Name="PatFoto3" ColumnName="PatFoto3" />
+                <ScalarProperty Name="PatFoto4" ColumnName="PatFoto4" />
+                <ScalarProperty Name="PatFoto5" ColumnName="PatFoto5" />
+                <ScalarProperty Name="PatAcessos" ColumnName="PatAcessos" />
+                <ScalarProperty Name="PatHorario" ColumnName="PatHorario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="bdTCCModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="UsuSenha" ColumnName="UsuSenha" />
+                <ScalarProperty Name="UsuLogin" ColumnName="UsuLogin" />
+                <ScalarProperty Name="UsuCodigo" ColumnName="UsuCodigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="bdTCCModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="CatNome" ColumnName="CatNome" />
+                <ScalarProperty Name="CatCodigo" ColumnName="CatCodigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

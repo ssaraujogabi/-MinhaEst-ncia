@@ -1,0 +1,56 @@
+﻿@model  TCCME.Models.Patrimonio
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="jumbotron">
+
+                <h2>Alterar</h2>
+                <br />
+
+                <form action="@Url.Action("Edit","Patrimonio")" method="post">
+
+                    <input type="hidden" id="PatCodigo" name="PatCodigo" value="@Model.PatCodigo" />
+
+
+
+                    <label>Nome Patrimônio</label>
+                    <input type="text" id="PatNome" class="form-control" name="PatNome" value="@Model.PatNome" /><br />
+
+                    <label>História</label>
+                    <textarea rows="4" cols="50" class="form-control" id="PatHistoria" name="PatHistoria"> value="@Model.PatHistoria" </textarea><br />
+
+                    <label>Endereço</label>
+                    <textarea rows="2" cols="50" class="form-control" id="PatEndereco" name="PatEndereco">value="@Model.PatEndereco" </textarea><br />
+
+                    <label>Horario de visitação</label>
+                    <br />
+                    <input type="text" class="form-control" id="PatHorario" name="PatHorario" value="@Model.PatHorario">
+
+                    <label>Foto 1</label>
+                    <input type="file" id="PatFoto1" class="form-control" name="PatFoto1" value="@Model.PatFoto1" /><br />
+
+                    <label>Foto 2</label>
+                    <input type="file" class="form-control" id="PatFoto2" name="PatFoto2" value="@Model.PatFoto2" /><br />
+
+                    <label>Foto 3</label>
+                    <input type="file" class="form-control" id="PatFoto3" name="PatFoto3" value="@Model.PatFoto3" /><br />
+
+                    <label>Foto 4</label>
+                    <input type="file" class="form-control" id="PatFoto4" name="PatFoto4" value="@Model.PatFoto4"/><br />
+
+                    <label>Foto 5</label>
+                    <input type="file" class="form-control" id="PatFoto5" name="PatFoto5" value="@Model.PatFoto5" /><br />
+
+
+                    <button class="btn btn-primary 4x form-control" type="submit" value="Enviar">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

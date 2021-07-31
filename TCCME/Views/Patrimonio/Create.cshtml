@@ -1,0 +1,72 @@
+﻿@model  IEnumerable<TCCME.Models.Categoria>
+@{
+    ViewBag.Title = "Create";
+
+}
+
+
+
+
+<div class="container">
+        <div class="row">
+          
+    <div class="col-md-12">
+        <div class="jumbotron">
+            <h2>NOVO PATRIMÔNIO</h2>
+            <br />
+            <form action="@Url.Action("Create","Patrimonio")" method="post" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <label>Nome Patrimônio</label>
+                    <input type="text" class="form-control" id="PatNome" name="PatNome" /><br />
+
+                    <label>História</label>
+                    <textarea rows="4" class="form-control" cols="50" id="PatHistoria" name="PatHistoria"></textarea><br />
+
+                    <label>Endereço</label>
+                    <textarea rows="2" cols="50" class="form-control" id="PatEndereco" name="PatEndereco"></textarea><br />
+
+                    <label>Horario de visitação</label>
+                    <br />
+                    <input type="text" class="form-control" id="PatHorario" name="PatHorario">
+                    <br />
+
+                    <label>Categoria</label>
+                    <br />
+                    <select>
+                        @foreach (var item in ViewBag.categorias)
+                        {
+                            <option value="@item.CatCodigo">@item.CatNome</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label>Foto 1</label>
+                    <input type="file" class="form-control" id="PatFoto1" name="PatFoto1" /><br />
+
+                    <label>Foto 2</label>
+                    <input type="file" class="form-control" id="PatFoto2" name="PatFoto2" /><br />
+
+                    <label>Foto 3</label>
+                    <input type="file" class="form-control" id="PatFoto3" name="PatFoto3" /><br />
+
+                    <label>Foto 4</label>
+                    <input type="file" class="form-control" id="PatFoto4" name="PatFoto4" /><br />
+
+                    <label>Foto 5</label>
+                    <input type="file" class="form-control" id="PatFoto5" name="PatFoto5" /><br />
+                </div>
+               
+                <br />
+                <br />
+                
+
+                <button class="btn btn-primary 4x btn-block" type="submit" value="Enviar">Enviar</button>
+            </form>
+            </div>
+        </div>
+    
+
+</div>
+    </div>
+
+
